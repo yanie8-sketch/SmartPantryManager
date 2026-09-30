@@ -226,7 +226,7 @@ public class PantryActivity extends AppCompatActivity {
 
             Toast.makeText(
                     this,
-                    "Your pantry is already empty.",
+                    "Your pantry is empty.",
                     Toast.LENGTH_SHORT
             ).show();
 
@@ -234,7 +234,7 @@ public class PantryActivity extends AppCompatActivity {
         }
 
         new AlertDialog.Builder(this)
-                .setTitle("Clear your pantry?")
+                .setTitle("This clears all items, clear your pantry?")
                 .setMessage(
                         "This will remove all "
                                 + items.size()

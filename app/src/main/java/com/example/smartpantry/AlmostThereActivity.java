@@ -155,7 +155,8 @@ public class AlmostThereActivity extends AppCompatActivity {
                     almostRecipes.size()
                             + (almostRecipes.size() == 1
                             ? " recipe you can almost make"
-                            : " recipes you can almost make")
+                            : " recipes you can almost make"
+                              + " — missing ingredients shown below")
             );
         }
     }

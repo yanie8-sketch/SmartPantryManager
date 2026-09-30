@@ -1,0 +1,70 @@
+[
+    {
+        "merged": "C:\\Users\\yanie\\.gradle\\daemon\\8.9\\com.example.smartpantry.app-debug-4:\\drawable_ic_leaf.xml.flat",
+        "source": "C:\\Users\\yanie\\.gradle\\daemon\\8.9\\com.example.smartpantry.app-main-6:\\drawable\\ic_leaf.xml"
+    },
+    {
+        "merged": "C:\\Users\\yanie\\.gradle\\daemon\\8.9\\com.example.smartpantry.app-debug-4:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\yanie\\.gradle\\daemon\\8.9\\com.example.smartpantry.app-main-6:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\yanie\\.gradle\\daemon\\8.9\\com.example.smartpantry.app-debug-4:\\layout_activity_add_edit.xml.flat",
+        "source": "C:\\Users\\yanie\\.gradle\\daemon\\8.9\\com.example.smartpantry.app-main-6:\\layout\\activity_add_edit.xml"
+    },
+    {
+        "merged": "C:\\Users\\yanie\\.gradle\\daemon\\8.9\\com.example.smartpantry.app-debug-4:\\layout_activity_recipe_detail.xml.flat",
+        "source": "C:\\Users\\yanie\\.gradle\\daemon\\8.9\\com.example.smartpantry.app-main-6:\\layout\\activity_recipe_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\yanie\\.gradle\\daemon\\8.9\\com.example.smartpantry.app-debug-4:\\layout_activity_suggestions.xml.flat",
+        "source": "C:\\Users\\yanie\\.gradle\\daemon\\8.9\\com.example.smartpantry.app-main-6:\\layout\\activity_suggestions.xml"
+    },
+    {
+        "merged": "C:\\Users\\yanie\\.gradle\\daemon\\8.9\\com.example.smartpantry.app-debug-4:\\drawable_ic_add.xml.flat",
+        "source": "C:\\Users\\yanie\\.gradle\\daemon\\8.9\\com.example.smartpantry.app-main-6:\\drawable\\ic_add.xml"
+    },
+    {
+        "merged": "C:\\Users\\yanie\\.gradle\\daemon\\8.9\\com.example.smartpantry.app-debug-4:\\drawable_bg_primary_button.xml.flat",
+        "source": "C:\\Users\\yanie\\.gradle\\daemon\\8.9\\com.example.smartpantry.app-main-6:\\drawable\\bg_primary_button.xml"
+    },
+    {
+        "merged": "C:\\Users\\yanie\\.gradle\\daemon\\8.9\\com.example.smartpantry.app-debug-4:\\layout_activity_pantry.xml.flat",
+        "source": "C:\\Users\\yanie\\.gradle\\daemon\\8.9\\com.example.smartpantry.app-main-6:\\layout\\activity_pantry.xml"
+    },
+    {
+        "merged": "C:\\Users\\yanie\\.gradle\\daemon\\8.9\\com.example.smartpantry.app-debug-4:\\layout_item_pantry.xml.flat",
+        "source": "C:\\Users\\yanie\\.gradle\\daemon\\8.9\\com.example.smartpantry.app-main-6:\\layout\\item_pantry.xml"
+    },
+    {
+        "merged": "C:\\Users\\yanie\\.gradle\\daemon\\8.9\\com.example.smartpantry.app-debug-4:\\layout_activity_almost_there.xml.flat",
+        "source": "C:\\Users\\yanie\\.gradle\\daemon\\8.9\\com.example.smartpantry.app-main-6:\\layout\\activity_almost_there.xml"
+    },
+    {
+        "merged": "C:\\Users\\yanie\\.gradle\\daemon\\8.9\\com.example.smartpantry.app-debug-4:\\layout_activity_settings.xml.flat",
+        "source": "C:\\Users\\yanie\\.gradle\\daemon\\8.9\\com.example.smartpantry.app-main-6:\\layout\\activity_settings.xml"
+    },
+    {
+        "merged": "C:\\Users\\yanie\\.gradle\\daemon\\8.9\\com.example.smartpantry.app-debug-4:\\drawable_bg_secondary_button.xml.flat",
+        "source": "C:\\Users\\yanie\\.gradle\\daemon\\8.9\\com.example.smartpantry.app-main-6:\\drawable\\bg_secondary_button.xml"
+    },
+    {
+        "merged": "com.example.smartpantry.app-debug-4:/layout_activity_almost_there.xml.flat",
+        "source": "com.example.smartpantry.app-main-6:/layout/activity_almost_there.xml"
+    },
+    {
+        "merged": "C:\\Users\\yanie\\.gradle\\daemon\\8.9\\com.example.smartpantry.app-debug-4:\\layout_activity_almost_there2.xml.flat",
+        "source": "C:\\Users\\yanie\\.gradle\\daemon\\8.9\\com.example.smartpantry.app-main-6:\\layout\\activity_almost_there2.xml"
+    },
+    {
+        "merged": "C:\\Users\\yanie\\.gradle\\daemon\\8.9\\com.example.smartpantry.app-debug-4:\\drawable_bg_input.xml.flat",
+        "source": "C:\\Users\\yanie\\.gradle\\daemon\\8.9\\com.example.smartpantry.app-main-6:\\drawable\\bg_input.xml"
+    },
+    {
+        "merged": "C:\\Users\\yanie\\.gradle\\daemon\\8.9\\com.example.smartpantry.app-debug-4:\\layout_item_recipe.xml.flat",
+        "source": "C:\\Users\\yanie\\.gradle\\daemon\\8.9\\com.example.smartpantry.app-main-6:\\layout\\item_recipe.xml"
+    },
+    {
+        "merged": "C:\\Users\\yanie\\.gradle\\daemon\\8.9\\com.example.smartpantry.app-debug-4:\\drawable_bg_card.xml.flat",
+        "source": "C:\\Users\\yanie\\.gradle\\daemon\\8.9\\com.example.smartpantry.app-main-6:\\drawable\\bg_card.xml"
+    }
+]

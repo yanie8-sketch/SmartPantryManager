@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background">
+
+    <!-- GREEN HEADER -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="52dp"
+        android:paddingBottom="24dp"
+        android:background="@color/green_900">
+
+        <ImageView
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:src="@drawable/ic_leaf"
+            android:contentDescription="Smart Pantry logo" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Suggested Recipes"
+                android:textSize="27sp"
+                android:textStyle="bold"
+                android:textColor="@color/surface" />
+
+            <TextView
+                android:id="@+id/txtSummary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="Recipes you can make with your pantry"
+                android:textSize="14sp"
+                android:textColor="@color/surface" />
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/btnSettings"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:padding="10dp"
+            android:src="@android:drawable/ic_menu_preferences"
+            android:background="@android:color/transparent"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="Settings"
+            android:tint="@color/surface" />
+
+    </LinearLayout>
+
+    <!-- READY RECIPES -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerReady"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="16dp"
+        android:clipToPadding="false" />
+
+    <!-- EMPTY STATE -->
+    <TextView
+        android:id="@+id/txtEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="32dp"
+        android:text="You don't have enough ingredients to make a recipe yet."
+        android:textSize="15sp"
+        android:textColor="@color/muted"
+        android:visibility="gone" />
+
+    <!-- BOTTOM NAVIGATION -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:background="@color/surface">
+
+        <Button
+            android:id="@+id/navPantry"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Pantry"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/green_900"
+            android:background="@drawable/bg_secondary_button" />
+
+        <Button
+            android:id="@+id/navSuggested"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="6dp"
+            android:text="Suggested"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/surface"
+            android:background="@drawable/bg_primary_button" />
+
+        <Button
+            android:id="@+id/navAlmost"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Almost There"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/green_900"
+            android:background="@drawable/bg_secondary_button" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/background">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:padding="20dp" android:orientation="vertical">
+        <TextView android:id="@+id/txtTitle" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Add ingredient" android:textSize="28sp" android:textStyle="bold" android:textColor="@color/green_900"/>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Keep the pantry accurate so recipe suggestions stay strict." android:textColor="@color/muted"
+            android:layout_marginTop="4dp" android:layout_marginBottom="20dp"/>
+        <EditText android:id="@+id/inputName" android:layout_width="match_parent" android:layout_height="56dp"
+            android:hint="Ingredient name (e.g. tomato)" android:inputType="textCapSentences" android:background="@drawable/bg_input"/>
+        <EditText android:id="@+id/inputQuantity" android:layout_width="match_parent" android:layout_height="56dp"
+            android:hint="Quantity (e.g. 4)" android:inputType="numberDecimal" android:background="@drawable/bg_input"
+            android:layout_marginTop="12dp"/>
+        <EditText android:id="@+id/inputUnit" android:layout_width="match_parent" android:layout_height="56dp"
+            android:hint="Unit (e.g. pieces, g, ml)" android:inputType="text" android:background="@drawable/bg_input"
+            android:layout_marginTop="12dp"/>
+        <EditText android:id="@+id/inputExpiry" android:layout_width="match_parent" android:layout_height="56dp"
+            android:hint="Expiry date (optional: YYYY-MM-DD)" android:inputType="text" android:background="@drawable/bg_input"
+            android:layout_marginTop="12dp"/>
+        <Button android:id="@+id/btnSave" android:layout_width="match_parent" android:layout_height="54dp"
+            android:text="Save ingredient" android:textColor="@color/surface" android:background="@drawable/bg_primary_button"
+            android:layout_marginTop="20dp"/>
+        <Button android:id="@+id/btnCancel" android:layout_width="match_parent" android:layout_height="54dp"
+            android:text="Cancel" android:textColor="@color/green_900" android:background="@drawable/bg_secondary_button"
+            android:layout_marginTop="10dp"/>
+    </LinearLayout>
+</ScrollView>

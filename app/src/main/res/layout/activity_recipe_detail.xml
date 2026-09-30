@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/background">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="20dp" android:orientation="vertical">
+        <TextView android:id="@+id/txtRecipeTitle" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textSize="30sp" android:textStyle="bold" android:textColor="@color/green_900"/>
+        <TextView android:id="@+id/txtRecipeDescription" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textColor="@color/muted" android:layout_marginTop="6dp"/>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Ingredients"
+            android:textSize="20sp" android:textStyle="bold" android:textColor="@color/ink" android:layout_marginTop="24dp"/>
+        <TextView android:id="@+id/txtIngredients" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textColor="@color/ink" android:layout_marginTop="8dp"/>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Method"
+            android:textSize="20sp" android:textStyle="bold" android:textColor="@color/ink" android:layout_marginTop="24dp"/>
+        <TextView android:id="@+id/txtMethod" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textColor="@color/ink" android:layout_marginTop="8dp"/>
+        <Button android:id="@+id/btnBack" android:layout_width="match_parent" android:layout_height="52dp"
+            android:text="Back" android:textColor="@color/green_900" android:background="@drawable/bg_secondary_button"
+            android:layout_marginTop="24dp"/>
+    </LinearLayout>
+</ScrollView>

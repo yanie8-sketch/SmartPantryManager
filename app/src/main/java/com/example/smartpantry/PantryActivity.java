@@ -1,5 +1,12 @@
 package com.example.smartpantry;
 
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
+import android.view.Gravity;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -247,10 +254,6 @@ public class PantryActivity extends AppCompatActivity {
 
                             db.clearAllPantryItems();
 
-                            /*
-                             * Reset notification tracking because
-                             * the pantry has completely changed.
-                             */
                             preferences.edit()
                                     .remove(
                                             KEY_SUGGESTED_RECIPES
@@ -334,34 +337,102 @@ public class PantryActivity extends AppCompatActivity {
             Recipe recipe
     ) {
 
-        new AlertDialog.Builder(this)
-                .setTitle("🍳 New Recipe Suggested")
-                .setMessage(
-                        recipe.name
-                                + "\n\n"
-                                + recipe.description
-                )
-                .setPositiveButton(
-                        "View Recipe",
-                        (dialog, which) -> {
+            LinearLayout container = new LinearLayout(this);
+            container.setOrientation(LinearLayout.VERTICAL);
+            container.setPadding(24, 20, 24, 20);
 
-                            Intent i = new Intent(
-                                    PantryActivity.this,
-                                    RecipeDetailActivity.class
-                            );
+            GradientDrawable background = new GradientDrawable();
+            background.setColor(Color.WHITE);
+            background.setCornerRadius(28);
+            background.setStroke(2, Color.rgb(46, 125, 50));
 
-                            i.putExtra(
-                                    "recipeId",
-                                    recipe.id
-                            );
+            container.setBackground(background);
+            container.setElevation(10);
 
-                            startActivity(i);
-                        }
-                )
-                .setNegativeButton(
-                        "Later",
-                        null
-                )
-                .show();
+            TextView title = new TextView(this);
+            title.setText("🍳 New Recipe Suggested");
+            title.setTextSize(16);
+            title.setTextColor(Color.rgb(27, 94, 32));
+
+            TextView message = new TextView(this);
+            message.setText(
+                    recipe.name
+                            + "\n"
+                            + recipe.description
+            );
+            message.setTextSize(13);
+            message.setTextColor(Color.DKGRAY);
+            message.setPadding(0, 8, 0, 12);
+
+            LinearLayout buttons = new LinearLayout(this);
+            buttons.setOrientation(LinearLayout.HORIZONTAL);
+            buttons.setGravity(Gravity.END);
+
+            Button viewRecipe = new Button(this);
+            viewRecipe.setText("View Recipe");
+
+            Button later = new Button(this);
+            later.setText("Later");
+
+            buttons.addView(
+                    later,
+                    new LinearLayout.LayoutParams(
+                            ViewGroup.LayoutParams.WRAP_CONTENT,
+                            ViewGroup.LayoutParams.WRAP_CONTENT
+                    )
+            );
+
+            buttons.addView(
+                    viewRecipe,
+                    new LinearLayout.LayoutParams(
+                            ViewGroup.LayoutParams.WRAP_CONTENT,
+                            ViewGroup.LayoutParams.WRAP_CONTENT
+                    )
+            );
+
+            container.addView(title);
+            container.addView(message);
+            container.addView(buttons);
+
+            PopupWindow popup = new PopupWindow(
+                    container,
+                    ViewGroup.LayoutParams.WRAP_CONTENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT,
+                    true
+            );
+
+            popup.setBackgroundDrawable(background);
+            popup.setOutsideTouchable(true);
+            popup.setElevation(12);
+
+            later.setOnClickListener(
+                    v -> popup.dismiss()
+            );
+
+            viewRecipe.setOnClickListener(
+                    v -> {
+
+                        popup.dismiss();
+
+                        Intent i = new Intent(
+                                PantryActivity.this,
+                                RecipeDetailActivity.class
+                        );
+
+                        i.putExtra(
+                                "recipe_id",
+                                recipe.id
+                        );
+
+                        startActivity(i);
+                    }
+            );
+
+            popup.showAtLocation(
+                    findViewById(android.R.id.content),
+                    Gravity.BOTTOM | Gravity.END,
+                    16,
+                    90
+            );
+        }
     }
-}

@@ -1,5 +1,7 @@
 package com.example.smartpantry;
 
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.Button;
@@ -13,20 +15,53 @@ import com.example.smartpantry.util.MotionFeedback;
 
 public class AddEditIngredientActivity extends AppCompatActivity {
     private DatabaseHelper db;
-    private EditText name, quantity, unit, expiry;
+    private EditText name, quantity, expiry;
+    private Spinner unit;
     private long editId = -1;
 
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_edit);
         db = new DatabaseHelper(this);
-        name=findViewById(R.id.inputName); quantity=findViewById(R.id.inputQuantity); unit=findViewById(R.id.inputUnit); expiry=findViewById(R.id.inputExpiry);
+        name=findViewById(R.id.inputName); quantity=findViewById(R.id.inputQuantity); unit=findViewById(R.id.spnUnit); expiry=findViewById(R.id.inputExpiry);
         TextView title=findViewById(R.id.txtTitle);
-        editId=getIntent().getLongExtra("id",-1);
+        String[] units = {
+                "pieces",
+                "g",
+                "kg",
+                "mg",
+                "ml",
+                "l",
+                "cups",
+                "tablespoons",
+                "teaspoons",
+                "slices",
+                "cloves",
+                "cans",
+                "leaves"
+        };
+
+        ArrayAdapter<String> unitAdapter =
+                new ArrayAdapter<>(
+                        this,
+                        android.R.layout.simple_spinner_item,
+                        units
+                );
+
+        unitAdapter.setDropDownViewResource(
+                android.R.layout.simple_spinner_dropdown_item
+        );
+
+        unit.setAdapter(unitAdapter);
         if (editId != -1) {
             title.setText("Edit ingredient");
             PantryItem item=db.getPantryItem(editId);
-            if (item != null) { name.setText(item.getName()); quantity.setText(String.valueOf(item.getQuantity())); unit.setText(item.getUnit()); expiry.setText(item.getExpiryDate()); }
+            if (item != null) { name.setText(item.getName()); quantity.setText(String.valueOf(item.getQuantity()));
+                int unitPosition = unitAdapter.getPosition(item.getUnit());
+
+                if (unitPosition >= 0) {
+                    unit.setSelection(unitPosition);
+                } expiry.setText(item.getExpiryDate()); }
         }
         Button save=findViewById(R.id.btnSave), cancel=findViewById(R.id.btnCancel);
         save.setOnClickListener(v -> save());
@@ -35,7 +70,10 @@ public class AddEditIngredientActivity extends AppCompatActivity {
     }
 
     private void save() {
-        String n=name.getText().toString().trim(), q=quantity.getText().toString().trim(), u=unit.getText().toString().trim(), e=expiry.getText().toString().trim();
+        String n=name.getText().toString().trim();
+        String q=quantity.getText().toString().trim();
+        String u=unit.getSelectedItem().toString();
+        String e=expiry.getText().toString().trim();
         if (TextUtils.isEmpty(n) || TextUtils.isEmpty(q) || TextUtils.isEmpty(u)) {
             Toast.makeText(this, "Name, quantity and unit are required.", Toast.LENGTH_LONG).show(); return;
         }

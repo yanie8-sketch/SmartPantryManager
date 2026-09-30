@@ -13,9 +13,13 @@
         <EditText android:id="@+id/inputQuantity" android:layout_width="match_parent" android:layout_height="56dp"
             android:hint="Quantity (e.g. 4)" android:inputType="numberDecimal" android:background="@drawable/bg_input"
             android:layout_marginTop="12dp"/>
-        <EditText android:id="@+id/inputUnit" android:layout_width="match_parent" android:layout_height="56dp"
-            android:hint="Unit (e.g. pieces, g, ml)" android:inputType="text" android:background="@drawable/bg_input"
-            android:layout_marginTop="12dp"/>
+        <Spinner
+            android:id="@+id/spnUnit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edit_text_background"
+            android:padding="12dp" />
         <EditText android:id="@+id/inputExpiry" android:layout_width="match_parent" android:layout_height="56dp"
             android:hint="Expiry date (optional: YYYY-MM-DD)" android:inputType="text" android:background="@drawable/bg_input"
             android:layout_marginTop="12dp"/>

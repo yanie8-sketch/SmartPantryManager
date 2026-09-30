@@ -35,12 +35,6 @@ public class IngredientMatcher {
         }
     }
 
-    /*
-     * ---------------------------------------------------------
-     * MATCH INFORMATION
-     * ---------------------------------------------------------
-     */
-
     public static MatchResult getMatchInfo(
             Recipe recipe,
             List<PantryItem> pantryItems
@@ -79,12 +73,6 @@ public class IngredientMatcher {
         );
     }
 
-    /*
-     * ---------------------------------------------------------
-     * CAN MAKE
-     * ---------------------------------------------------------
-     */
-
     public static boolean canMake(
             Recipe recipe,
             List<PantryItem> pantryItems
@@ -105,12 +93,6 @@ public class IngredientMatcher {
         return true;
     }
 
-    /*
-     * ---------------------------------------------------------
-     * INGREDIENT AVAILABILITY
-     * ---------------------------------------------------------
-     */
-
     private static boolean isIngredientAvailable(
             RecipeIngredient recipeIngredient,
             List<PantryItem> pantryItems
@@ -124,10 +106,6 @@ public class IngredientMatcher {
         for (PantryItem pantryItem
                 : pantryItems) {
 
-            /*
-             * First determine whether the actual
-             * ingredients are the same.
-             */
             if (!ingredientsMatch(
                     recipeIngredient.name,
                     pantryItem.getName()
@@ -138,10 +116,6 @@ public class IngredientMatcher {
 
             foundMatchingIngredient = true;
 
-            /*
-             * If the units can be converted,
-             * convert them.
-             */
             if (areUnitsConvertible(
                     pantryItem.getUnit(),
                     recipeIngredient.unit
@@ -154,10 +128,6 @@ public class IngredientMatcher {
                                 recipeIngredient.unit
                         );
 
-                /*
-                 * If the units are exactly the same,
-                 * simply add the quantity.
-                 */
             } else if (
                     normalizeUnit(
                             pantryItem.getUnit()
@@ -177,18 +147,9 @@ public class IngredientMatcher {
             return false;
         }
 
-        /*
-         * Required quantity has been satisfied.
-         */
         return totalAvailable >=
                 recipeIngredient.quantity;
     }
-
-    /*
-     * ---------------------------------------------------------
-     * INGREDIENT NAME MATCHING
-     * ---------------------------------------------------------
-     */
 
     private static boolean ingredientsMatch(
             String required,
@@ -220,9 +181,6 @@ public class IngredientMatcher {
         String[] words =
                 normalized.split("\\s+");
 
-        /*
-         * Known ingredients.
-         */
         String[] knownIngredients = {
 
                 "chicken",
@@ -291,18 +249,8 @@ public class IngredientMatcher {
             }
         }
 
-        /*
-         * Unknown ingredients use the
-         * complete normalized name.
-         */
         return normalized;
     }
-
-    /*
-     * ---------------------------------------------------------
-     * UNIT HANDLING
-     * ---------------------------------------------------------
-     */
 
     private static boolean areUnitsConvertible(
             String from,
@@ -315,25 +263,16 @@ public class IngredientMatcher {
         String toUnit =
                 normalizeUnit(to);
 
-        /*
-         * Same unit.
-         */
         if (fromUnit.equals(toUnit)) {
             return true;
         }
 
-        /*
-         * Weight.
-         */
         if (isWeightUnit(fromUnit)
                 && isWeightUnit(toUnit)) {
 
             return true;
         }
 
-        /*
-         * Volume.
-         */
         if (isVolumeUnit(fromUnit)
                 && isVolumeUnit(toUnit)) {
 
@@ -359,81 +298,54 @@ public class IngredientMatcher {
             return quantity;
         }
 
-        /*
-         * kg -> g
-         */
         if (fromUnit.equals("kg")
                 && toUnit.equals("g")) {
 
             return quantity * 1000.0;
         }
 
-        /*
-         * g -> kg
-         */
         if (fromUnit.equals("g")
                 && toUnit.equals("kg")) {
 
             return quantity / 1000.0;
         }
 
-        /*
-         * mg -> g
-         */
         if (fromUnit.equals("mg")
                 && toUnit.equals("g")) {
 
             return quantity / 1000.0;
         }
 
-        /*
-         * g -> mg
-         */
         if (fromUnit.equals("g")
                 && toUnit.equals("mg")) {
 
             return quantity * 1000.0;
         }
 
-        /*
-         * kg -> mg
-         */
         if (fromUnit.equals("kg")
                 && toUnit.equals("mg")) {
 
             return quantity * 1_000_000.0;
         }
 
-        /*
-         * mg -> kg
-         */
         if (fromUnit.equals("mg")
                 && toUnit.equals("kg")) {
 
             return quantity / 1_000_000.0;
         }
 
-        /*
-         * L -> ml
-         */
         if (fromUnit.equals("l")
                 && toUnit.equals("ml")) {
 
             return quantity * 1000.0;
         }
 
-        /*
-         * ml -> L
-         */
         if (fromUnit.equals("ml")
                 && toUnit.equals("l")) {
 
             return quantity / 1000.0;
         }
 
-        /*
-         * Same-unit fallback.
-         */
         return quantity;
     }
 
@@ -518,12 +430,6 @@ public class IngredientMatcher {
                 return value;
         }
     }
-
-    /*
-     * ---------------------------------------------------------
-     * TEXT NORMALISATION
-     * ---------------------------------------------------------
-     */
 
     private static String normalize(
             String value

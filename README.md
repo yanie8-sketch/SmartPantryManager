@@ -44,7 +44,6 @@ Add:
 - 0.5 onion
 - 1 g salt
 
-Then open Suggested Recipes. Tomato Omelette should appear. Delete tomato and refresh Suggestions; it should disappear. This demonstrates the strict rule.
+Then open Suggested Recipes. Tomato Omelette should appear. Delete tomato and refresh Suggestions; it should disappear and appear in the Almost There window. This demonstrates the strict rule.
 
-## Important GitHub requirement
-The assignment requires a genuine development history with at least 10 meaningful commits. Do not create ten fake commits immediately before submission. Commit incremental development work as you build and test the app.
+

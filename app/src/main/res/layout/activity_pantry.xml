@@ -7,7 +7,6 @@
     android:orientation="vertical"
     android:background="@color/background">
 
-    <!-- GREEN HEADER -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,14 +18,12 @@
         android:paddingBottom="24dp"
         android:background="@color/green_900">
 
-        <!-- Logo -->
         <ImageView
             android:layout_width="46dp"
             android:layout_height="46dp"
             android:src="@drawable/ic_leaf"
             android:contentDescription="Smart Pantry logo" />
 
-        <!-- Title -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -52,7 +49,6 @@
 
         </LinearLayout>
 
-        <!-- Settings -->
         <ImageButton
             android:id="@+id/btnSettings"
             android:layout_width="48dp"
@@ -67,7 +63,6 @@
 
     </LinearLayout>
 
-    <!-- PANTRY CONTROLS -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -112,7 +107,6 @@
 
     </LinearLayout>
 
-    <!-- PANTRY LIST -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerPantry"
         android:layout_width="match_parent"
@@ -124,7 +118,6 @@
         android:paddingBottom="12dp"
         android:clipToPadding="false" />
 
-    <!-- BOTTOM NAVIGATION -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="76dp"
@@ -136,7 +129,6 @@
         android:paddingBottom="8dp"
         android:background="@color/surface">
 
-        <!-- PANTRY -->
         <Button
             android:id="@+id/navPantry"
             android:layout_width="0dp"
@@ -148,7 +140,6 @@
             android:textColor="@color/surface"
             android:background="@drawable/bg_primary_button" />
 
-        <!-- SUGGESTED -->
         <Button
             android:id="@+id/navSuggested"
             android:layout_width="0dp"
@@ -162,7 +153,6 @@
             android:textColor="@color/green_900"
             android:background="@drawable/bg_secondary_button" />
 
-        <!-- ALMOST THERE -->
         <Button
             android:id="@+id/navAlmost"
             android:layout_width="0dp"

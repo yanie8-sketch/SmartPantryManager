@@ -108,21 +108,11 @@ public class RecipeAdapter
         StringBuilder text =
                 new StringBuilder();
 
-        /*
-         * Ingredient availability.
-         */
         text.append(result.matchedCount)
                 .append("/")
                 .append(result.totalCount)
                 .append(" ingredients available");
 
-        /*
-         * Ready-to-make status.
-         *
-         * IMPORTANT:
-         * This uses canMake(), which checks both
-         * ingredient names AND quantities/units.
-         */
         if (canMake) {
 
             text.append(" • Ready to make");

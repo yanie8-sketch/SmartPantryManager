@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background">#F6FAF7</color>
+    <color name="danger">#C62828</color>
+    <color name="green_100">#DDF7E9</color>
+    <color name="green_50">#F1FBF5</color>
+    <color name="green_500">#19B86B</color>
+    <color name="green_600">#0A9B5B</color>
+    <color name="green_700">#087A4B</color>
+    <color name="green_800">#075E3E</color>
+    <color name="green_900">#073B2A</color>
+    <color name="ink">#10231B</color>
+    <color name="muted">#64756D</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="warning">#A66A00</color>
+    <string name="app_name">Smart Pantry</string>
+    <string name="app_tagline">Use what you already have.</string>
+    <style name="Theme.SmartPantry" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">@color/background</item>
+        <item name="android:navigationBarColor">@color/background</item>
+        <item name="colorPrimary">@color/green_800</item>
+        <item name="colorPrimaryContainer">@color/green_100</item>
+        <item name="android:colorAccent">@color/green_700</item>
+    </style>
+</resources>

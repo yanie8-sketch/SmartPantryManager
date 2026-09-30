@@ -141,7 +141,7 @@ public class SuggestionsActivity extends AppCompatActivity {
         if (recipeCount == 0) {
 
             summary.setText(
-                    "No complete recipes are available yet."
+                    "No complete recipes available."
             );
 
             empty.setVisibility(

@@ -177,18 +177,7 @@ public class SuggestionsActivity extends AppCompatActivity {
         );
 
         startActivity(intent);
-
-        ImageButton settings =
-                findViewById(R.id.btnSettings);
-
-        settings.setOnClickListener(
-                v -> startActivity(
-                        new Intent(
-                                SuggestionsActivity.this,
-                                SettingsActivity.class
-                        )
-                )
-        );
+        
 
 
     }
